@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="kanit-text">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <main>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
+        <a href="/app-page-home-pro"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="assets/logo_04.png" alt="ภาพ" style="width: 200px;" />
+        </a>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="app-page-home-pro" class="nav-link" aria-current="page">หน้าแรก</a></li>
+          <li class="nav-item"><a href="app-about-page-pro" class="nav-link ">เกี่ยวกับ</a></li>
+          <li class="nav-item"><a href="app-diagnose-page-pro" class="nav-link active">วินิจฉัย</a></li>
+          <li class="nav-item"><a href="app-contact-us-page-pro" class="nav-link">ติดต่อเรา</a></li>
+          <li class="nav-item"><a href="app-admin-page-pro" class="nav-link">ภาพรวม</a></li>
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-justify"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+          </svg> -->
+        </ul>
+      </header>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-3" align="left">
+          <div class="text_page">
+            <h1>แบบประเมินความเสี่ยง <br> ไข้หวัดสายพันธุ์ใหม่</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur<br>
+              adipiscing elit, sed do eiusmod tempor<br>
+              incididunt ut labore et dolore</p>
+          </div>
+        </div>
+        <img src="assets/Interface_03.png" class="image_page" alt="ภาพ" />
+      </div>
+    </div>
+    <div class="row">
+      <h1> อาการที่เป็นไข้หวัดอยู่ ใช่โรคไข้หวัดใหญ่สายพันธ์ุใหม่หรือไม่ ?</h1>
+    </div>
+    <div class="container py-4">
+      <div class="p-3 mb-4 bg-body-tertiary rounded-5">
+        <div class="container-fluid py-5">
+          <div class="row">
+            <div class="col-5 mx-auto mb-4">
+              <h1 style="text-align: center; border-radius: 10px; padding: 20px;">
+                เริ่มต้นทำแบบประเมิน</h1>
+            </div>
+          </div>
+
+          <div [ngClass]="{'invalid-feedback': fullName}" class="mb-1">
+            <p>{{ fullNameResult }}</p>
+          </div>
+          <div class="d-flex align-items-center col-5 mb-4">
+            <input [(ngModel)]="fullName" type="text" class="form-control" id="fullname" placeholder="ชื่อ-นามสกุล"
+              required>
+            <label for="fullname" style="color: red; margin-left: 10px;">*</label>
+          </div>
+
+          <div [ngClass]="{'invalid-feedback': phoneNumber}" class="mb-1">
+            <p>{{ phoneNumberResult }}</p>
+          </div>
+          <div class="d-flex align-items-center col-5 mb-4">
+            <input [(ngModel)]="phoneNumber" type="number" class="form-control" id="phoneNumber" placeholder="เบอร์โทร"
+              required>
+            <label for="phoneNumber" style="color: red; margin-left: 10px;">*</label>
+          </div>
+
+          <div class="col-5 mb-4">
+            <input [(ngModel)]="email" type="email" class="form-control" id="email" placeholder="อีเมล" required>
+          </div>
+
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5">
+              <input type="text" class="form-control" id="age" placeholder="อายุ" readonly>
+            </div>
+            <output for="age" id="ageOutput" class="text_number_input">{{ age }}</output>
+            <input type="range" [(ngModel)]="age" class="form-range" id="age" min="0" max="100" step="1">
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5">
+              <input type="text" class="form-control" id="weight" placeholder="น้ำหนัก" readonly>
+            </div>
+            <output for="weight" id="weightOutput" class="text_number_input">{{ weight }}</output>
+            <input type="range" [(ngModel)]="weight" class="form-range" id="weight" min="0" max="100" step="1">
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5">
+              <input type="text" class="form-control" id="height" placeholder="ส่วนสูง" readonly>
+            </div>
+            <output for="height" id="heightOutput" class="text_number_input">{{ height }}</output>
+            <input type="range" [(ngModel)]="height" class="form-range" id="height" min="0" max="200" step="1">
+          </div>
+
+          <div [ngClass]="{'invalid-feedback': bpd}" class="mb-1">
+            <p>{{ bpdResult }}</p>
+          </div>
+          <div class="d-flex align-items-center col-5 mb-4">
+            <input [(ngModel)]="bpd" type="number" class="form-control" id="bpd" placeholder="ความดันตัวบน" required>
+            <label for="bpd" style="color: red; margin-left: 10px;">*</label>
+          </div>
+          <div [ngClass]="{'invalid-feedback': bps}" class="mb-1">
+            <p>{{ bpsResult }}</p>
+          </div>
+          <div class="d-flex align-items-center col-5 mb-4">
+            <input [(ngModel)]="bps" type="number" class="form-control" id="bps" placeholder="ความดันตัวล่าง" required>
+            <label for="bps" style="color: red; margin-left: 10px;">*</label>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="fever">คุณมีอาการไข้หรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="fever" type="checkbox" class="form-check-input" id="fever" style="cursor: pointer;">
+                <label for="fever" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="cough">คุณมีอาการไอหรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="cough" type="checkbox" class="form-check-input" id="cough" style="cursor: pointer;">
+                <label for="cough" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="sore_throat">คุณมีอาการแสบคอ เจ็บคอ
+                หรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="sore_throat" type="checkbox" class="form-check-input" id="sore_throat"
+                  style="cursor: pointer;">
+                <label for="sore_throat" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="phlegm">คุณมีอาการเสมหะหรือน้ำมูกหรือไม่</label>
+            </div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="phlegm" type="checkbox" class="form-check-input" id="phlegm"
+                  style="cursor: pointer;">
+                <label for="phlegm" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="headache">คุณมีอาการเพลีย
+                ปวดตัวหรือหรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="headache" type="checkbox" class="form-check-input" id="headache"
+                  style="cursor: pointer;">
+                <label for="headache" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="vomit">คุณอาเจียนหรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="vomit" type="checkbox" class="form-check-input" id="vomit" style="cursor: pointer;">
+                <label for="vomit" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center  mb-4">
+            <div class="col-5"><label class="form-check-label" for="covid">คุณติดโควิดหรือไม่</label></div>
+            <div class="col">
+              <div class="d-inline-block me-1">ไม่ใช่</div>
+              <div class="form-check form-switch d-inline-block">
+                <input [(ngModel)]="covid" type="checkbox" class="form-check-input" id="covid" style="cursor: pointer;">
+                <label for="covid" class="form-check-label">ใช่</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-4">
+            <div class="col-5">
+              <label class="form-check-label" for="feverish">อุณหภูมิของร่างกายคุณมีความร้อน</label>
+            </div>
+            <div class="form-check" style="margin-left: 10px;">
+              <input [(ngModel)]="feverish" type="radio" value="36.5" class="form-check-input" name="feverish" required>
+              <label class="form-check-label" for="feverish_lv1">ตัวอุ่นๆ</label>
+            </div>
+            <div class="form-check" style="margin-left: 10px;">
+              <input [(ngModel)]="feverish" type="radio" value="37.5" class="form-check-input" name="feverish" required>
+              <label class="form-check-label" for="feverish_lv2">ตัวร้อนปานกลาง</label>
+            </div>
+            <div class="form-check" style="margin-left: 10px;">
+              <input [(ngModel)]="feverish" type="radio" value="38.5" class="form-check-input" name="feverish" required>
+              <label class="form-check-label" for="feverish_lv3">ตัวร้อนมาก</label>
+            </div>
+          </div>
+
+
+
+
+          <div class="row">
+            <div class="col-5 mx-auto mb-4">
+              <button (click)="calculateRisk()"
+                style="color: white; text-align: center; background: rgb(77, 104, 255); border: none; border-radius: 10px; padding: 10px;">
+                ทดสอบว่าคุณมีความเสี่ยงแค่ไหน
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4" *ngIf="showContent">
+      <div class="row text-center">
+        <h1>ผลประเมินความเสี่ยงต่อการเป็นโรคไข้หวัดใหญ่สายพันธุ์ใหม่</h1>
+        <h3>คุณมีระดับความเสี่ยงโรคไข้หวัดใหญ่สายพันธุ์ใหม่อยู่ในระดับ</h3>
+        <div class="col-5 mx-auto rounded-4">
+          <h3 style="border-radius: 10px; background: bisque; padding: 40px; width: auto;">
+            <span *ngIf="responseValue == 1; else equal">คุณมีความเสี่ยง</span>
+            <ng-template #equal>คุณไม่มีความเสี่ยง</ng-template>
+          </h3>
+        </div>
+        <div class="row">
+
+          <div class="col-5 mx-auto" style="text-align: start; color: red;">
+            <ng-container *ngIf="responseValue_2 == 1; else otherContent">
+              <p>ข้อแนะนำ: ควรมาพบแพทย์ทันที</p>
+            </ng-container>
+            <ng-template #otherContent>
+              <p>ข้อแนะนำ: ......</p>
+            </ng-template>
+          </div>
+
+
+        </div>
+
+        <div class="col-5 mx-auto mb-4 py-3">
+          <a (click)="goToReport()" target="_blank">
+            <button style="color: white; text-align: center; background: rgb(77, 104, 255); border: none; border-radius: 10px; padding: 10px;">
+              ดูผลการทดสอบ
+            </button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <footer class="pt-3 mt-4 text-body-secondary border-top">
+        &copy; 2023
+      </footer>
+    </div>
+
+  </main>
+
+</body>
+
+</html>
